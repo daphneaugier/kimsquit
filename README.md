@@ -1,9 +1,9 @@
-# kimsquit
+# Kimsquit
 
-## Objective 
+## Objective  
 The goal of this project is to develop a teacher-to-student messaging app.
 
-## Team
+## Team members
 | Name          | Github        | Email  |
 | ------------- |:-------------:| -----:|
 | David Ronci | david-ron | |
