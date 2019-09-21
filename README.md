@@ -8,7 +8,7 @@ The goal of this project is to develop a teacher-to-student messaging app.
 | ------------- |:-------------:| -----:|
 | David Ronci | david-ron | |
 | Colin Barber | colinbarber |  |
-| Daphne Augier  daphneaugier | daphne.augier@gmail.com |
+| Daphne Augier | daphneaugier | daphne.augier@gmail.com |
 | Seif Elderbi | SeifElDerby |  |
 | Kennan Hoa | KennanHoa |  |
 | Jonathan Hsu | bit172 | |
