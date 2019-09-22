@@ -7,7 +7,7 @@ The goal of this project is to develop a teacher-to-student messaging app.
 | Name          | Github        | Email  |
 | ------------- |:-------------:| -----:|
 | David Ronci | david-ron | |
-| Colin Barber | colinbarber |  |
+| Colin Barber | colinbarber |  | colinbmusic@gmail.com
 | Daphne Augier | daphneaugier | daphne.augier@gmail.com |
 | Seif Elderbi | SeifElDerby |  |
 | Kennan Hoa | KennanHoa |  |
