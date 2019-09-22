@@ -12,7 +12,7 @@ The goal of this project is to develop a teacher-to-student messaging app.
 | Seif Elderbi | SeifElDerby |  |
 | Kennan Hoa | KennanHoa |  |
 | Jonathan Hsu | bit172 | bit172@gmail.com |
-| Yun Shi Lin | ys-lin | |
+| Yun Shi Lin | ys-lin | yunshi.lin8@gmail.com |
 | Cindy Lo | cindyslittleplanet |  |
 | Tashfia Naharin Proma | tashfia98 | tasfianaharin@gmail.com |
 | Dmytro Semenov |  |  |
