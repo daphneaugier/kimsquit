@@ -16,6 +16,6 @@ The goal of this project is to develop a teacher-to-student messaging app.
 | Cindy Lo | cindyslittleplanet |  |
 | Tashfia Naharin Proma | tashfia98 |  |
 | Dmytro Semenov |  |  |
-| Leo Jr Silao | leojrsilao |  | leojrsilao@gmail.com
+| Leo Jr Silao | leojrsilao |  | leojrsilao@gmail.com |
 
 ## Technologies used
