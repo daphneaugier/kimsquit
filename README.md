@@ -14,7 +14,7 @@ The goal of this project is to develop a teacher-to-student messaging app.
 | Jonathan Hsu | bit172 | bit172@gmail.com |
 | Yun Shi Lin | ys-lin | |
 | Cindy Lo | cindyslittleplanet |  |
-| Tashfia Naharin Proma | tashfia98 |  |
+| Tashfia Naharin Proma | tashfia98 | tasfianaharin@gmail.com |
 | Dmytro Semenov |  |  |
 | Leo Jr Silao | leojrsilao | leojrsilao@gmail.com | 
 
