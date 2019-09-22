@@ -11,7 +11,7 @@ The goal of this project is to develop a teacher-to-student messaging app.
 | Daphne Augier | daphneaugier | daphne.augier@gmail.com |
 | Seif Elderbi | SeifElDerby |  |
 | Kennan Hoa | KennanHoa |  |
-| Jonathan Hsu | bit172 | |
+| Jonathan Hsu | bit172 | bit172@gmail.com |
 | Yun Shi Lin | ys-lin | |
 | Cindy Lo | cindyslittleplanet |  |
 | Tashfia Naharin Proma | tashfia98 |  |
