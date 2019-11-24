@@ -8,12 +8,12 @@ public class Grade {
 
     /**
      * Grade Constructor
-     * @param gradeId
+     * @param courseId
      * @param studentId
      * @param numberGrade
      */
-    public Grade(String gradeId, String studentId, float numberGrade) {
-        this.gradeId = gradeId;
+    public Grade(String courseId, String studentId, float numberGrade) {
+        this.gradeId = courseId;
         this.studentId = studentId;
         this.numberGrade = numberGrade;
     }

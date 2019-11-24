@@ -47,7 +47,7 @@ public class Announcement {
     @Override
     public String toString() {
         return "Announcement{" +
-                "annoucementText='" + annoucementText + '\'' +
+                "annoucementText='" + announcementText + '\'' +
                 date +
                 '}';
     }

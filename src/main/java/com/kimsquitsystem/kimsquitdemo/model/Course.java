@@ -13,12 +13,12 @@ public class Course {
     /**
      * Constructor for Course Object
      * @param courseName
-     * @param courseID
+     * @param courseId
      * @param membersofCourse
      */
-    public Course(String courseName, String courseID, HashMap<String, User> membersofCourse) {
+    public Course(String courseName, String courseId, HashMap<String, User> membersofCourse) {
         this.courseName = courseName;
-        this.courseID = courseID;
+        this.courseID = courseId;
         this.membersofCourse = membersofCourse;
     }
 
