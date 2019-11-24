@@ -53,7 +53,7 @@ public class User {
      * get User Id
      * @return
      */
-    final public String getUserId() {
+    public String getUserId() {
         return userId;
     }
 

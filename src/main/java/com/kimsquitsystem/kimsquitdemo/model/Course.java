@@ -23,7 +23,7 @@ public class Course {
      * get name of course
      * @return
      */
-    final public String getCourseName() {
+    public String getCourseName() {
         return courseName;
     }
 
@@ -31,7 +31,7 @@ public class Course {
      * get course id
      * @return
      */
-    final public String getCourseID() {
+    public String getCourseID() {
         return courseID;
     }
 
