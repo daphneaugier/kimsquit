@@ -10,7 +10,7 @@ The goal of this project is to develop a teacher-to-student messaging app.
 | Colin Barber | colinbarber | colinbmusic@gmail.com |
 | Daphne Augier | daphneaugier | daphne.augier@gmail.com |
 | Seif Elderbi | SeifElDerby |  |
-| Kennan Hoa | KennanHoa |  |
+| Kennan Hoa | KennanHoa | hoa_kennan2@hotmail.com |
 | Jonathan Hsu | bit172 | bit172@gmail.com |
 | Yun Shi Lin | ys-lin | yunshi.lin8@gmail.com |
 | Cindy Lo | cindyslittleplanet | lo_cindy@outlook.com |
