@@ -1,25 +1,22 @@
 package com.kimsquitsystem.kimsquitdemo.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Course {
     private String courseName;
     private String courseID;
-    // For userIDs to connect to User object which may be a student or teacher
-    private HashMap<String,User> membersofCourse;
-    private ArrayList<Announcement> annoucements;
+    private ArrayList<Announcement> announcements;
 
     /**
      * Constructor for Course Object
      * @param courseName
      * @param courseId
-     * @param membersofCourse
+     * @param announcements
      */
-    public Course(String courseName, String courseId, HashMap<String, User> membersofCourse) {
+    public Course(String courseName, String courseId, ArrayList<Announcement> announcements) {
         this.courseName = courseName;
         this.courseID = courseId;
-        this.membersofCourse = membersofCourse;
+        this.announcements = announcements;
     }
 
     /**
@@ -55,19 +52,19 @@ public class Course {
     }
 
     /**
-     * get members of course
+     * get announcements
      * @return
      */
-    public HashMap<String, User> getMembersofCourse() {
-        return membersofCourse;
+    public ArrayList<Announcement> getAnnouncements() {
+        return announcements;
     }
 
     /**
-     * set members of course
-     * @param membersofCourse
+     * set announcements
+     * @param announcements
      */
-    public void setMembersofCourse(HashMap<String, User> membersofCourse) {
-        this.membersofCourse = membersofCourse;
+    public void setAnnouncements(ArrayList<Announcement> announcements) {
+        this.announcements = announcements;
     }
 
     @Override
@@ -75,7 +72,9 @@ public class Course {
         return "Course{" +
                 "courseName='" + courseName + '\'' +
                 ", courseID='" + courseID + '\'' +
-                ", membersofCourse=" + membersofCourse +
+                ", membersofCourse=" + announcements +
                 '}';
     }
+
+
 }
