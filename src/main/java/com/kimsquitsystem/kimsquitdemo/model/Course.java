@@ -8,7 +8,7 @@ public class Course {
     private String courseID;
     // For userIDs to connect to User object which may be a student or teacher
     private HashMap<String,User> membersofCourse;
-    private ArrayList<Annoucement> annoucements;
+    private ArrayList<Announcement> annoucements;
 
     /**
      * Constructor for Course Object
