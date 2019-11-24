@@ -3,8 +3,8 @@ package com.kimsquitsystem.kimsquitdemo.model;
 import java.util.HashMap;
 
 public class Student extends User {
-    private HashMap<String,String> groupIds;
-    private String address;
+    final private HashMap<String,String> groupIds;
+    final private String address;
 
     /**
      * Constructor for Student
@@ -21,7 +21,6 @@ public class Student extends User {
         this.address = address;
     }
 
-
     /**
      *
      * @return return map of which student in the group
@@ -31,27 +30,11 @@ public class Student extends User {
     }
 
     /**
-     * Set map of group Ids
-     * @param groupIds
-     */
-    public void setGroupIds(HashMap<String, String> groupIds) {
-        this.groupIds = groupIds;
-    }
-
-    /**
      * Get Student's addres
      * @return
      */
     public String getAddress() {
         return address;
-    }
-
-    /**
-     * Setter
-     * @param address
-     */
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     /**

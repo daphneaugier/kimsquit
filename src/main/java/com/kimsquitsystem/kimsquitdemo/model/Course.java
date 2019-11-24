@@ -3,9 +3,9 @@ package com.kimsquitsystem.kimsquitdemo.model;
 import java.util.ArrayList;
 
 public class Course {
-    private String courseName;
-    private String courseID;
-    private ArrayList<Announcement> announcements;
+    final private String courseName;
+    final private String courseID;
+    final private ArrayList<Announcement> announcements;
 
     /**
      * Constructor for Course Object
@@ -28,14 +28,6 @@ public class Course {
     }
 
     /**
-     * set name of course
-     * @param courseName
-     */
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
-    /**
      * get course id
      * @return
      */
@@ -44,27 +36,11 @@ public class Course {
     }
 
     /**
-     * set course id
-     * @param courseID
-     */
-    public void setCourseID(String courseID) {
-        this.courseID = courseID;
-    }
-
-    /**
      * get announcements
      * @return
      */
     public ArrayList<Announcement> getAnnouncements() {
         return announcements;
-    }
-
-    /**
-     * set announcements
-     * @param announcements
-     */
-    public void setAnnouncements(ArrayList<Announcement> announcements) {
-        this.announcements = announcements;
     }
 
     @Override

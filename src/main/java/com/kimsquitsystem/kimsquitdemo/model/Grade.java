@@ -2,9 +2,9 @@ package com.kimsquitsystem.kimsquitdemo.model;
 
 
 public class Grade {
-    private String gradeId;
+    final private String gradeId;
     final private String studentId;
-    private float numberGrade;
+    final private float numberGrade;
 
     /**
      * Grade Constructor
@@ -26,13 +26,6 @@ public class Grade {
         return gradeId;
     }
 
-    /**
-     * set grade Id
-     * @param gradeId
-     */
-    public void setGradeId(String gradeId) {
-        this.gradeId = gradeId;
-    }
 
     /**
      * get student Id
@@ -42,12 +35,12 @@ public class Grade {
         return studentId;
     }
 
+    /**
+     * get grade
+     * @return
+     */
     public float getNumberGrade() {
         return numberGrade;
-    }
-
-    public void setNumberGrade(float numberGrade) {
-        this.numberGrade = numberGrade;
     }
 
     @Override

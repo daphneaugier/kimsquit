@@ -4,15 +4,19 @@ import java.util.HashMap;
 
 public class User {
 
-    private String userId;
-    private String firstName;
-    private String lastName;
-    private HashMap<String,Course> inCourses;
+    final private String userId;
+    final private String firstName;
+    final private String lastName;
+    final private HashMap<String,Course> inCourses;
 
     /**
      * Default User Constructor
      */
     public User() {
+        userId = null;
+        firstName = null;
+        lastName = null;
+        inCourses = null;
     }
 
     /**
@@ -39,26 +43,10 @@ public class User {
 
     /**
      *
-     * @param firstName
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     *
      * @return last name
      */
     public String getLastName() {
         return lastName;
-    }
-
-    /**
-     *
-     * @param lastName
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     /**
@@ -69,13 +57,6 @@ public class User {
         return userId;
     }
 
-    /**
-     * set user Id
-     * @param userId
-     */
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
     /**
      *
      * @return String of first name and last name
@@ -94,13 +75,5 @@ public class User {
      */
     public HashMap<String, Course> getInCourses() {
         return inCourses;
-    }
-
-    /**
-     * set courses user is part of
-     * @param inCourses
-     */
-    public void setInCourses(HashMap<String, Course> inCourses) {
-        this.inCourses = inCourses;
     }
 }
