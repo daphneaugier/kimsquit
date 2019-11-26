@@ -1,5 +1,5 @@
 CREATE TABLE  IF NOT EXISTS `course` (
-  `course_id` varchar(5) NOT NULL,
+  `course_id` varchar(6) NOT NULL,
   `course_name` varchar(30) NOT NULL,
   `course_description` varchar(255),
   PRIMARY KEY (`course_id`)
@@ -7,7 +7,7 @@ CREATE TABLE  IF NOT EXISTS `course` (
 
 CREATE TABLE IF NOT EXISTS `groups` (
   `group_id` int NOT NULL AUTO_INCREMENT,
-  `course_id` varchar(5) NOT NULL
+  `course_id` varchar(6) NOT NULL,
   `name` varchar(30) NOT NULL,
   PRIMARY KEY (`group_id`),
   FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`)
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 );
 
 CREATE TABLE IF NOT EXISTS `course_teacher` (
-  `course_id` varchar(5) NOT NULL,
+  `course_id` varchar(6) NOT NULL,
   `teacher_id` int NOT NULL,
   `group_id` int NOT NULL,
   FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`),
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `course_teacher` (
 );
 
 CREATE TABLE IF NOT EXISTS `grade` (
-  `course_id` varchar(5) NOT NULL,
+  `course_id` varchar(6) NOT NULL,
   `student_id` int NOT NULL,
   `grade` int,
   FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`),
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `grade` (
 
 CREATE TABLE IF NOT EXISTS `announcement` (
   `announcement_id` int NOT NULL AUTO_INCREMENT,
-  `course_id` varchar(5) NOT NULL,
+  `course_id` varchar(6) NOT NULL,
   `announcement` varchar(500),
   `date` DATETIME,
   PRIMARY KEY (`announcement_id`),
