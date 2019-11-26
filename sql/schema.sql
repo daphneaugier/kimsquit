@@ -7,7 +7,6 @@ CREATE TABLE  IF NOT EXISTS `course` (
 
 CREATE TABLE IF NOT EXISTS `groups` (
   `group_id` int NOT NULL AUTO_INCREMENT,
-  `course_id` varchar(6) NOT NULL,
   `name` varchar(30) NOT NULL,
   PRIMARY KEY (`group_id`),
   FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`)
