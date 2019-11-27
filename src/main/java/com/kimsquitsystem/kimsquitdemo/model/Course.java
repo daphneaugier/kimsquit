@@ -3,20 +3,20 @@ package com.kimsquitsystem.kimsquitdemo.model;
 import java.util.ArrayList;
 
 public class Course {
-    final private String courseName;
-    final private String courseID;
-    final private ArrayList<Announcement> announcements;
+    private final String courseId;
+    private final String courseName;
+    private final String courseDescription;
 
     /**
      * Constructor for Course Object
      * @param courseName
      * @param courseId
-     * @param announcements
+     * @param courseDescription
      */
-    public Course(String courseName, String courseId, ArrayList<Announcement> announcements) {
+    public Course(String courseId, String courseName, String courseDescription) {
+        this.courseId = courseId;
         this.courseName = courseName;
-        this.courseID = courseId;
-        this.announcements = announcements;
+        this.courseDescription = courseDescription;
     }
 
     /**
@@ -31,26 +31,16 @@ public class Course {
      * get course id
      * @return
      */
-    public String getCourseID() {
-        return courseID;
-    }
-
-    /**
-     * get announcements
-     * @return
-     */
-    public ArrayList<Announcement> getAnnouncements() {
-        return announcements;
+    public String getCourseId() {
+        return courseId;
     }
 
     @Override
     public String toString() {
         return "Course{" +
-                "courseName='" + courseName + '\'' +
-                ", courseID='" + courseID + '\'' +
-                ", membersofCourse=" + announcements +
+                "courseId='" + courseId + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", courseDescription='" + courseDescription + '\'' +
                 '}';
     }
-
-
 }
