@@ -1,0 +1,25 @@
+body {background-color: #F1F9FF !important
+    }
+
+.navbar {
+    background-color: #2699FB !important;
+
+}
+
+.navbar-component{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.sidebar-component{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 1100px;
+}
+
+.grouped{
+    display:flex; 
+    color:black;
+}
+
