@@ -11,7 +11,8 @@
     "react-icons": "^3.8.0",
     "react-metismenu": "^1.4.0",
     "react-scripts": "3.2.0",
-    "react-simple-tree-menu": "^1.1.8"
+    "react-simple-tree-menu": "^1.1.8",
+    "react-treebeard": "^3.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
