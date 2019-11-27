@@ -5,6 +5,7 @@ import { FaRegUser } from "react-icons/fa";
 
 export default class navbar extends React.Component{
     render(){
+        console.log('hi');
         return(
             <div className="navbar-component" >
                 
