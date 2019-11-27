@@ -35,6 +35,10 @@ public class Course {
         return courseId;
     }
 
+    public String getCourseDescription() {
+        return courseDescription;
+    }
+
     @Override
     public String toString() {
         return "Course{" +

@@ -36,7 +36,6 @@ public class CourseDao {
             String  courseDescription = resultSet.getString("course_description");
             return new Course(course_id, courseName, courseDescription);
         });
-
         return Optional.ofNullable(course);
     }
 }
