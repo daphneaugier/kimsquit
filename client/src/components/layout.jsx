@@ -1,47 +1,60 @@
 import React from 'react';
-import Navbar from './navbar';
-import Sidebar from './sidebar';
-import { Container, Row, Col} from 'react-bootstrap';
+import Navbar from './navbar.jsx';
+import Sidebar from './sidebar.jsx';
+import ContactInfo from './contactinfo.jsx';
+import Announcements from './announcements.jsx';
+import WeeklyInfo from './weeklyinfo.jsx';
+import {Card, Row, Col} from 'react-bootstrap';
 import './layout.css';
-import axios from 'axios';
 
 
 
 export default class layout extends React.Component{
-    state = {
-        courses: [],
-    }
-
-    componentDidMount(){
-        axios.get(`http://localhost:8080/api/v1/course`)
-                .then(res => {
-                    console.log(res);
-                    this.setState({
-                        courses: res
-                    });
- 
-             })
-    }
-
+    
+    
     render(){
-        
+       
         return(
             
             <body>
-                <div>
-                    <Row> 
-                        <Col> 
-                             <Navbar/>
-                        </Col>
-                    </Row>
-                    <Row> 
-                        <Col> 
-                             <Sidebar/>
-                        </Col>
-                    </Row>
                 
+                    <div className="box"> 
+                    
+                        <br/>
+                        <Row> 
+                             <Col> 
+                                 <Navbar/>
+                             </Col>
+                            
+                        </Row>
+                        <br/>
+                        
+                        <Row> 
+                          
+                          <Col xs={3}> 
+                            <Sidebar/>   
+                          </Col>
+
+                         <Col xs={3}> 
+                              <ContactInfo/>
+                              <br/>
+                              <Announcements/>
+                         </Col>
+
+                         <Col xs={6}>
+                            <WeeklyInfo/>
+                         </Col>
+                         
+                        
+                        
+                        </Row>
+
+                        
+                        
+                    </div>
+                    
              
-               </div>
+              
             </body>
             
         );
