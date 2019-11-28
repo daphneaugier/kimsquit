@@ -19,3 +19,6 @@ The goal of this project is to develop a teacher-to-student messaging app.
 | Leo Jr Silao | leojrsilao | leojrsilao@gmail.com | 
 
 ## Technologies used
+* IntelliJ IDEA
+* Java 13
+* SpringBoot
