@@ -3,7 +3,7 @@ package com.kimsquitsystem.kimsquitdemo.model;
 import java.util.HashMap;
 
 public class Student extends User {
-    final private HashMap<String,String> groupIds;
+    final private int groupId;
     final private String address;
 
     /**
@@ -11,13 +11,12 @@ public class Student extends User {
      * @param userId
      * @param firstName
      * @param lastName
-     * @param inCourses
-     * @param groupIds
      * @param address
+     * @param groupId
      */
-    public Student(String userId, String firstName, String lastName, HashMap<String, Course> inCourses, HashMap<String, String> groupIds, String address) {
-        super(userId, firstName, lastName, inCourses);
-        this.groupIds = groupIds;
+    public Student(String userId, String firstName, String lastName, String address, int groupId) {
+        super(userId, firstName, lastName);
+        this.groupId = groupId;
         this.address = address;
     }
 
@@ -25,8 +24,8 @@ public class Student extends User {
      *
      * @return return map of which student in the group
      */
-    public HashMap<String, String> getGroupIds() {
-        return groupIds;
+    public int getGroupId() {
+        return groupId;
     }
 
     /**
@@ -44,7 +43,7 @@ public class Student extends User {
     @Override
     public String toString() {
         return "Student{" +
-                "groupIds=" + groupIds +
+                "groupIds=" + groupId +
                 ", address='" + address + '\'' +
                 "} " + super.toString();
     }
