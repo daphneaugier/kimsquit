@@ -4,7 +4,7 @@ import Sidebar from './sidebar.jsx';
 import ContactInfo from './contactinfo.jsx';
 import Announcements from './announcements.jsx';
 import WeeklyInfo from './weeklyinfo.jsx';
-import {Card, Row, Col} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 import './layout.css';
 
 
@@ -50,7 +50,7 @@ export default class layout extends React.Component{
                         </Row>
 
                         
-                        
+
                     </div>
                     
              
