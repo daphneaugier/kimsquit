@@ -4,16 +4,18 @@ import com.kimsquitsystem.kimsquitdemo.dao.StudentDao;
 import com.kimsquitsystem.kimsquitdemo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class StudentService {
     private final StudentDao studentDao;
 
     @Autowired
-    public StudentService(@Qualifier("course") StudentDao courseDao) {
-        this.studentDao = courseDao;
+    public StudentService(@Qualifier("student") StudentDao studentDao) {
+        this.studentDao = studentDao;
     }
 
     public List<Student> getAllStudents() {

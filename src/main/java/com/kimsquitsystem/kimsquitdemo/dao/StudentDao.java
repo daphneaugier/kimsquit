@@ -19,7 +19,7 @@ public class StudentDao {
     }
 
     public List<Student> selectAllStudentss() {
-        final String sql = "SELECT student_id, first_name, last_name, address, group_id  FROM course WHERE user_id = ?";
+        final String sql = "SELECT student_id, first_name, last_name, address, group_id  FROM student";
         List<Student> students = jdbcTemplate.query(sql, (resultSet, i) ->
         {
             String user_id = resultSet.getString("student_id");
@@ -33,7 +33,7 @@ public class StudentDao {
     }
 
     public Optional<Student> selectStudentById(String id) {
-        final String sql = "SELECT student_id, first_name, last_name, address, group_id  FROM course WHERE user_id = ?";
+        final String sql = "SELECT student_id, first_name, last_name, address, group_id  FROM student WHERE user_id = ?";
         Student student = jdbcTemplate.queryForObject(sql, new Object[]{ id }, (resultSet, i) ->
         {
             String user_id = resultSet.getString("student_id");
