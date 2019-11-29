@@ -25,8 +25,8 @@ public class AnnouncementController {
         return announcementService.getAllAnnouncements();
     }
 
-    @GetMapping(path = {"courseId"})
-    public Announcement getAnnouncementsByCourseId(String courseId){
+    @GetMapping(path = "{courseId}")
+    public Announcement getAnnouncementsByCourseId(@PathVariable("courseId") String courseId){
         return announcementService.getAnnouncementsByCourseId(courseId).orElse(null);
     }
 }
