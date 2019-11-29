@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class Teacher extends User {
 
-    public Teacher(String userId, String firstName, String lastName, HashMap<String, Course> inCourses) {
-        super(userId, firstName, lastName, inCourses);
+    public Teacher(String userId, String firstName, String lastName) {
+        super(userId, firstName, lastName);
     }
 
     @Override

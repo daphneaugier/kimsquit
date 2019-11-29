@@ -7,7 +7,6 @@ public class User {
     final private String userId;
     final private String firstName;
     final private String lastName;
-    final private HashMap<String,Course> inCourses;
 
     /**
      * Default User Constructor
@@ -16,7 +15,6 @@ public class User {
         userId = null;
         firstName = null;
         lastName = null;
-        inCourses = null;
     }
 
     /**
@@ -24,13 +22,11 @@ public class User {
      * @param userId
      * @param firstName
      * @param lastName
-     * @param inCourses
      */
-    public User(String userId, String firstName, String lastName, HashMap<String, Course> inCourses) {
+    public User(String userId, String firstName, String lastName) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.inCourses = inCourses;
     }
 
     /**
@@ -67,13 +63,5 @@ public class User {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
-    }
-
-    /**
-     * get courses user is part of
-     * @return
-     */
-    public HashMap<String, Course> getInCourses() {
-        return inCourses;
     }
 }

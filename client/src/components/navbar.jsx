@@ -5,8 +5,9 @@ import { FaRegUser } from "react-icons/fa";
 
 export default class navbar extends React.Component{
     render(){
+        
         return(
-            <div className="navbar-component" >
+            <div className="navbar-component">
                 
                 <Navbar variant="dark">
                   <Navbar.Brand style={{fontSize: 30}}>Kimsquit</Navbar.Brand> 
