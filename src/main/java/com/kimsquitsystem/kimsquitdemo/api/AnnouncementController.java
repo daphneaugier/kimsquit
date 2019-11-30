@@ -1,4 +1,5 @@
 package com.kimsquitsystem.kimsquitdemo.api;
+
 import com.kimsquitsystem.kimsquitdemo.model.Announcement;
 import com.kimsquitsystem.kimsquitdemo.service.AnnouncementService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class AnnouncementController {
     }
 
     @GetMapping(path = "{courseId}")
-    public Announcement getAnnouncementsByCourseId(@PathVariable("courseId") String courseId){
+    public Announcement getAnnouncementsByCourseId(@PathVariable("courseId") String courseId) {
         return announcementService.getAnnouncementsByCourseId(courseId).orElse(null);
     }
 }

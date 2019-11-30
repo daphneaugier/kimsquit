@@ -26,7 +26,7 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
-    @GetMapping(path="{id}")
+    @GetMapping(path = "{id}")
     public Student getStudentById(@PathVariable("id") String id) {
         return studentService.getStudentById(id)
                 .orElse(null);

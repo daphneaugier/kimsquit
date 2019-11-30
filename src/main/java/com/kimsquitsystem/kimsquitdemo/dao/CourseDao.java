@@ -31,10 +31,10 @@ public class CourseDao {
 
     public Optional<Course> selectCourseById(String id) {
         final String sql = "SELECT course_id, course_name, course_description FROM course WHERE course_id = ?";
-        Course course = jdbcTemplate.queryForObject(sql, new Object[]{ id }, (resultSet, i) -> {
+        Course course = jdbcTemplate.queryForObject(sql, new Object[]{id}, (resultSet, i) -> {
             String course_id = resultSet.getString("course_id");
             String courseName = resultSet.getString("course_name");
-            String  courseDescription = resultSet.getString("course_description");
+            String courseDescription = resultSet.getString("course_description");
             return new Course(course_id, courseName, courseDescription);
         });
         return Optional.ofNullable(course);
@@ -47,13 +47,13 @@ public class CourseDao {
                         "NATURAL JOIN course_teacher " +
                         "NATURAL JOIN student s " +
                         "WHERE c.course_id = ?";
-        List<Student> students = jdbcTemplate.query(sql,new Object[] { courseId } ,(resultSet, i) -> {
+        List<Student> students = jdbcTemplate.query(sql, new Object[]{courseId}, (resultSet, i) -> {
             int studentId = resultSet.getInt("student_id");
             String firstName = resultSet.getString("first_name");
             String lastName = resultSet.getString("last_name");
             String address = resultSet.getString("address");
             int groupId = resultSet.getInt("group_id");
-            return new Student(studentId, firstName, lastName,address,groupId);
+            return new Student(studentId, firstName, lastName, address, groupId);
         });
         return students;
     }

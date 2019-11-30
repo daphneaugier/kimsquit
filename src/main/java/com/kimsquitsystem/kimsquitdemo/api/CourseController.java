@@ -27,14 +27,14 @@ public class CourseController {
         return courseService.getAllCourses();
     }
 
-    @GetMapping(path="{id}")
+    @GetMapping(path = "{id}")
     public Course getCourseById(@PathVariable("id") String id) {
         return courseService.getCourseById(id)
                 .orElse(null);
     }
 
-    @GetMapping(path="{id}/students")
-    public List<Student> getStudentsInCourse( @PathVariable("id")String courseId) {
+    @GetMapping(path = "{id}/students")
+    public List<Student> getStudentsInCourse(@PathVariable("id") String courseId) {
         return courseService.getStudentsInCourse(courseId);
     }
 }
