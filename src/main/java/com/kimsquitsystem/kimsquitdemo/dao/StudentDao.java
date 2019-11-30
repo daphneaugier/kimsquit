@@ -18,7 +18,7 @@ public class StudentDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Student> selectAllStudentss() {
+    public List<Student> selectAllStudents() {
         final String sql = "SELECT student_id, first_name, last_name, address, group_id  FROM student";
         List<Student> students = jdbcTemplate.query(sql, (resultSet, i) -> {
             int user_id = resultSet.getInt("student_id");

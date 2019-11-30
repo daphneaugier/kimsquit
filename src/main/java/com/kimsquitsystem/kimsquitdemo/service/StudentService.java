@@ -19,7 +19,7 @@ public class StudentService {
     }
 
     public List<Student> getAllStudents() {
-        return studentDao.selectAllStudentss();
+        return studentDao.selectAllStudents();
     }
 
     public Optional<Student> getStudentById(String id) {
