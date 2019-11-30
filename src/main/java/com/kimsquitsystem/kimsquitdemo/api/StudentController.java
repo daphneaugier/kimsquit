@@ -3,7 +3,6 @@ package com.kimsquitsystem.kimsquitdemo.api;
 import com.kimsquitsystem.kimsquitdemo.service.StudentService;
 import com.kimsquitsystem.kimsquitdemo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +25,7 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
-    @GetMapping(path="{id}")
+    @GetMapping(path = "{id}")
     public Student getStudentById(@PathVariable("id") String id) {
         return studentService.getStudentById(id)
                 .orElse(null);
