@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.nio.file.Path;
 import java.util.List;
 
 @RequestMapping("/api/v1/grade")
@@ -28,5 +29,11 @@ public class GradeController {
     @GetMapping(path = "{student_id}")
     public List<Grade> getGradesByStudentId(@PathVariable("student_id") int studentId) {
         return gradeService.getGradesByStudentId(studentId);
+    }
+
+    @GetMapping(path = "{student_id}/{course_id}")
+    public Grade getGradeByStudentIdAndCourseId(@PathVariable("student_id") int studentId, @PathVariable("course_id") String courseId) {
+        return gradeService.getGradeByStudentIdAndCourseId(studentId, courseId)
+                .orElse(null);
     }
 }

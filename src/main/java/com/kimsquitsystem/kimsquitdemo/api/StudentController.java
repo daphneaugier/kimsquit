@@ -1,5 +1,6 @@
 package com.kimsquitsystem.kimsquitdemo.api;
 
+import com.kimsquitsystem.kimsquitdemo.model.Course;
 import com.kimsquitsystem.kimsquitdemo.service.StudentService;
 import com.kimsquitsystem.kimsquitdemo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,11 @@ public class StudentController {
     public Student getStudentById(@PathVariable("id") String id) {
         return studentService.getStudentById(id)
                 .orElse(null);
+    }
+
+    @GetMapping(path = "{id}/course")
+    public List<Course> getCoursesByStudentId(@PathVariable("id") int studentId) {
+        return studentService.getCoursesByStudentId(studentId);
     }
 }
 

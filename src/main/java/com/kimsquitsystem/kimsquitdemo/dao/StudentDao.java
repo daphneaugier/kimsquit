@@ -1,5 +1,6 @@
 package com.kimsquitsystem.kimsquitdemo.dao;
 
+import com.kimsquitsystem.kimsquitdemo.model.Course;
 import com.kimsquitsystem.kimsquitdemo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -43,6 +44,21 @@ public class StudentDao {
             return new Student(user_id, firstName, lastName, address, group_id);
         });
         return Optional.ofNullable(student);
+    }
+
+    public List<Course> selectCoursesByStudentId(int studentId) {
+        final String sql = "SELECT c.course_id, c.course_name, c.course_description " +
+                "FROM course c " +
+                "NATURAL JOIN course_teacher " +
+                "NATURAL JOIN student " +
+                "WHERE student_id = ?";
+        List<Course> courses = jdbcTemplate.query(sql, new Object[]{studentId} ,(resultSet, i) -> {
+            String courseId = resultSet.getString("course_id");
+            String courseName = resultSet.getString("course_name");
+            String courseDescription = resultSet.getString("course_description");
+            return new Course(courseId, courseName, courseDescription);
+        });
+        return courses;
     }
 
 
