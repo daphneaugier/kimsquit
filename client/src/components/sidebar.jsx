@@ -19,20 +19,23 @@ const useStyles = makeStyles({
 export default function SidebarMenu() {
   const classes = useStyles();
 
-  const [data, setData] = useState({ courses: [], attendee: []});
+  const [data, setData] = useState({ courses: [], attendees: [], oneStudentData: []});
 
   useEffect(() => {
     const fetchData = async () => {
-      const allCourses = await axios(
-        `http://localhost:8080/api/v1/course`,
+      const studentCourses = await axios(
+        `http://localhost:8080/api/v1/grade/11`,
       );
 
-      const singleAttendee = await axios(
-        `http://localhost:8080/api/v1/student/11`,
+      const Attendees = await axios(
+        `http://localhost:8080/api/v1/course/ENGL10/students`
       );
 
+      const gradeForOneStudent = await axios (
+        ` http://localhost:8080/api/v1/grade`
+      );
 
-      setData({ courses: [...allCourses.data], attendee: [singleAttendee.data]});
+      setData({ courses: [...studentCourses.data], attendees: [...Attendees.data], oneStudentData: [...gradeForOneStudent.data]});
     };
     fetchData();
     
@@ -41,7 +44,7 @@ export default function SidebarMenu() {
 
   return (
     
-    <Card style={{height: '80vh'}}> 
+    <Card style={{height: '84vh'}}> 
      <Card.Body>
       <Card.Title align="center" style={{ color: '#2699FB', fontSize: 30}}>Navigation Menu</Card.Title>
       <hr />
@@ -52,26 +55,25 @@ export default function SidebarMenu() {
         >
         
           <TreeItem nodeId="1" label="Attendees">
-            {data && data.attendee.map(attendee => (
+            {data && data.attendees.map(attendee => (
                 <TreeItem nodeId={attendee.userId} label={attendee.firstName + ' ' + attendee.lastName} />
             ))}
           
           </TreeItem>
 
           <TreeItem nodeId="2" label="Grades">
-            <TreeItem label="bet">
-
+          {data && data.oneStudentData.slice(0, 1).map(studentOne => (
+            <TreeItem nodeId="2000" label={"Course total: " + studentOne.grade}>
             </TreeItem>
+          ))}
           </TreeItem>
 
-          <TreeItem nodeId="3" label="My courses">
+          <TreeItem nodeId="3000" label="My courses">
           {data && data.courses.map(courses => (
                 <TreeItem nodeId={courses.courseId} label={courses.courseId} />
             ))}
           </TreeItem>
-
           
-
         </TreeView>
      </Card.Body>
     </Card>

@@ -21,14 +21,14 @@ export default class announcements extends React.Component{
 
         return(
             <div className="announcements-component">
-                <Card style={{height: '42vh'}}> 
+                <Card style={{height: '53vh'}}> 
                     <Card.Body>
                         <div align="left" >
                         <Card.Title style={{ color: '#2699FB', fontSize: 23}}>Recent Announcements</Card.Title>
                          <Card.Text>
                          <hr />
                         
-                            <p> <big>{announcement.annoucementText}</big> <br/>
+                            <p> <big>{announcement.announcement}</big> <br/>
                                 <small>{announcement.date}</small> 
                             </p>
                         
@@ -41,6 +41,12 @@ export default class announcements extends React.Component{
                         <p> <big>Tutorial starts next week</big> <br/>
                                 <small>2019-11-13 10:05:43</small> 
                         </p>
+                        <hr />
+                         
+                        <p> <big>Individual assignment due next week</big> <br/>
+                                <small>2019-11-06 9:35:23</small> 
+                        </p>
+                        
                          
                          
                          </Card.Text>

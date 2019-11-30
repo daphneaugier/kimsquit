@@ -22,7 +22,7 @@ export default class weeklyinfo extends React.Component{
         return(
             <div className="weeklyinfo-component">
                 
-                <Card style={{ backgroundColor: '#7FC4FD', height: '80.1vh'}}> 
+                <Card style={{ backgroundColor: '#7FC4FD', height: '84vh'}}> 
                     <Card.Body>
                        <div align="left" >
                        <Card.Title align="left" style={{ color: 'black', fontSize: 29}}>{course.courseId + ': ' + course.courseDescription }</Card.Title>
@@ -42,8 +42,10 @@ export default class weeklyinfo extends React.Component{
                               <hr />
                               <p>22 September - 28 September</p>
                               <hr />
+                              <p>29 September - 5 October</p>
+                              <hr />
                              </Card.Text>
-                            <hr />
+                         
                         </div>           
                     </Card.Body>
                 </Card>

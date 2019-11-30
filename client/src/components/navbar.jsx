@@ -10,7 +10,7 @@ export default class navbar extends React.Component{
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/v1/student/11`)
+        axios.get(`http://localhost:8080/api/v1/student/1`)
           .then(res => {
              
             this.setState({ student: res.data });
