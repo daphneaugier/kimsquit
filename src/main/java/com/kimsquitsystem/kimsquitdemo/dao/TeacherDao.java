@@ -19,7 +19,7 @@ public class TeacherDao {
     }
 
     public List<Teacher> selectAllTeachers() {
-        final String sql = "SELECT teacher_id, first_name, last_name FROM teacher";
+        final String sql = "SELECT teacher_id, first_name, last_name, address FROM teacher";
         List<Teacher> teachers = jdbcTemplate.query(sql, (resultSet, i) ->
         {
             int user_id = resultSet.getInt("teacher_id");
@@ -32,7 +32,7 @@ public class TeacherDao {
     }
 
     public Optional<Teacher> selectByTeacherId(String id) {
-        final String sql = "SELECT teacher_id, first_name, last_name FROM teacher WHERE teacher_id = ?";
+        final String sql = "SELECT teacher_id, first_name, last_name, address FROM teacher WHERE teacher_id = ?";
         Teacher teacher = jdbcTemplate.queryForObject(sql, new Object[]{ id }, (resultSet, i) ->
         {
             int user_id = resultSet.getInt("teacher_id");
