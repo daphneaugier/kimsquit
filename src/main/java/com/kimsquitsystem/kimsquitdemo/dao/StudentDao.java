@@ -22,7 +22,7 @@ public class StudentDao {
         final String sql = "SELECT student_id, first_name, last_name, address, group_id  FROM student";
         List<Student> students = jdbcTemplate.query(sql, (resultSet, i) ->
         {
-            String user_id = resultSet.getString("student_id");
+            int user_id = resultSet.getInt("student_id");
             String firstName = resultSet.getString("first_name");
             String lastName = resultSet.getString("last_name");
             String address = resultSet.getString("address");
@@ -36,7 +36,7 @@ public class StudentDao {
         final String sql = "SELECT student_id, first_name, last_name, address, group_id  FROM student WHERE student_id = ?";
         Student student = jdbcTemplate.queryForObject(sql, new Object[]{ id }, (resultSet, i) ->
         {
-            String user_id = resultSet.getString("student_id");
+            int user_id = resultSet.getInt("student_id");
             String firstName = resultSet.getString("first_name");
             String lastName = resultSet.getString("last_name");
             String address = resultSet.getString("address");

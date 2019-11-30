@@ -4,18 +4,9 @@ import java.util.HashMap;
 
 public class User {
 
-    final private String userId;
+    final private int userId;
     final private String firstName;
     final private String lastName;
-
-    /**
-     * Default User Constructor
-     */
-    public User() {
-        userId = null;
-        firstName = null;
-        lastName = null;
-    }
 
     /**
      * Constructor for user
@@ -23,7 +14,7 @@ public class User {
      * @param firstName
      * @param lastName
      */
-    public User(String userId, String firstName, String lastName) {
+    public User(int userId, String firstName, String lastName) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -49,7 +40,7 @@ public class User {
      * get User Id
      * @return
      */
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 

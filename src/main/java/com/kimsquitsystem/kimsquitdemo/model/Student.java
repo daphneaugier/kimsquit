@@ -14,7 +14,7 @@ public class Student extends User {
      * @param address
      * @param groupId
      */
-    public Student(String userId, String firstName, String lastName, String address, int groupId) {
+    public Student(int userId, String firstName, String lastName, String address, int groupId) {
         super(userId, firstName, lastName);
         this.groupId = groupId;
         this.address = address;
