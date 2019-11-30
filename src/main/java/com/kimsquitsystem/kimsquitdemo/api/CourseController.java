@@ -1,6 +1,7 @@
 package com.kimsquitsystem.kimsquitdemo.api;
 
 import com.kimsquitsystem.kimsquitdemo.model.Course;
+import com.kimsquitsystem.kimsquitdemo.model.Student;
 import com.kimsquitsystem.kimsquitdemo.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,5 +33,10 @@ public class CourseController {
     public Course getCourseById(@PathVariable("id") String id) {
         return courseService.getCourseById(id)
                 .orElse(null);
+    }
+
+    @GetMapping(path="{id}/students")
+    public List<Student> getStudentsInCourse( @PathVariable("id")String courseId) {
+        return courseService.getStudentsInCourse(courseId);
     }
 }
