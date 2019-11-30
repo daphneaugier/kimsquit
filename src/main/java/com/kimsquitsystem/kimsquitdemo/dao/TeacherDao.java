@@ -25,7 +25,8 @@ public class TeacherDao {
             int user_id = resultSet.getInt("teacher_id");
             String firstName = resultSet.getString("first_name");
             String lastName = resultSet.getString("last_name");
-            return new Teacher(user_id, firstName,lastName);
+            String address = resultSet.getString("address");
+            return new Teacher(user_id, firstName,lastName, address);
         });
         return teachers;
     }
@@ -37,7 +38,8 @@ public class TeacherDao {
             int user_id = resultSet.getInt("teacher_id");
             String firstName = resultSet.getString("first_name");
             String lastName = resultSet.getString("last_name");
-            return new Teacher(user_id, firstName, lastName);
+            String address = resultSet.getString("address");
+            return new Teacher(user_id, firstName, lastName, address);
         });
         return Optional.ofNullable(teacher);
     }
