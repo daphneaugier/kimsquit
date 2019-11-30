@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Teacher extends User {
 
-    public Teacher(String userId, String firstName, String lastName) {
+    public Teacher(int userId, String firstName, String lastName) {
         super(userId, firstName, lastName);
     }
 
