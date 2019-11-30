@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/v1/student")
 @RestController
 public class StudentController {
@@ -23,7 +22,7 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<Student> StudentController() {
+    public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
