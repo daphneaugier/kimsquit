@@ -19,4 +19,8 @@ public class GradeService {
     public List<Grade> getAllGrades() {
         return gradeDao.selectAllGrades();
     }
+
+    public List<Grade> getGradesByStudentId(int studentId) {
+        return gradeDao.selectGradesByStudentId(studentId);
+    }
 }
