@@ -27,4 +27,15 @@ public class GradeDao {
         });
         return grades;
     }
+
+    public List<Grade> selectGradesByStudentId(int studentId) {
+        final String sql = "SELECT course_id, student_id, grade FROM grade WHERE student_id = ?";
+        List<Grade> grades = jdbcTemplate.query(sql, new Object[]{studentId}, (resultSet, i) -> {
+            String course_id = resultSet.getString("course_id");
+            int student_id = resultSet.getInt("student_id");
+            int grade = resultSet.getInt("grade");
+            return new Grade(course_id, student_id, grade);
+        });
+        return grades;
+    }
 }
