@@ -31,7 +31,7 @@ public class AnnouncementDao {
 
     public Optional<Announcement> selectAnnouncementByCourseId(String CourseId) {
         final String sql = "SELECT course_id, announcement_id,  date, announcement FROM announcement WHERE course_id = ?";
-        Announcement announcement = jdbcTemplate.queryForObject(sql, new Object[]{ CourseId }, (resultSet, i) -> {
+        Announcement announcement = jdbcTemplate.queryForObject(sql, new Object[]{CourseId}, (resultSet, i) -> {
             String announcement_id = resultSet.getString("announcement_id");
             String course_id = resultSet.getString("course_id");
             String date = resultSet.getString("date");
