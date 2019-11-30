@@ -4,6 +4,7 @@ import com.kimsquitsystem.kimsquitdemo.model.Grade;
 import com.kimsquitsystem.kimsquitdemo.service.GradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,10 @@ public class GradeController {
     @GetMapping
     public List<Grade> getAllGrades() {
         return gradeService.getAllGrades();
+    }
+
+    @GetMapping(path = "{student_id}")
+    public List<Grade> getGradesByStudentId(@PathVariable("student_id") int studentId) {
+        return gradeService.getGradesByStudentId(studentId);
     }
 }
