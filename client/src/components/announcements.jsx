@@ -1,23 +1,50 @@
 import React from 'react';
 import {Card} from 'react-bootstrap';
-
+import axios from 'axios';
 
 export default class announcements extends React.Component{
+    state = {
+        announcement: []
+    }
+
+    componentDidMount() {
+        axios.get(`http://localhost:8080/api/v1/announcement/ENGL10`)
+          .then(res => {
+             
+            this.setState({ announcement: res.data });
+            console.log(this.state.announcement);
+          })
+    }
+
     render(){
-        
+        const {announcement} = this.state;
+
         return(
             <div className="announcements-component">
                 <Card style={{height: '42vh'}}> 
                     <Card.Body>
-                        <Card.Title align="center" style={{ color: '#2699FB', fontSize: 23}}>Recent Announcements</Card.Title>
+                        <div align="left" >
+                        <Card.Title style={{ color: '#2699FB', fontSize: 23}}>Recent Announcements</Card.Title>
                          <Card.Text>
-                               Naruto Uzumaki :D 
-                              <br/>
-                              POD: Tuesdays 17:45-20:30 
-                              <br/>
-                              Office: EV2.422
+                         <hr />
+                        
+                            <p> <big>{announcement.annoucementText}</big> <br/>
+                                <small>{announcement.date}</small> 
+                            </p>
+                        
+                        <hr />
+                        <p> <big>Quiz material for next week</big> <br/>
+                                <small>2019-11-20 12:30:31</small> 
+                            </p>
+                            <hr />
+
+                        <p> <big>Tutorial starts next week</big> <br/>
+                                <small>2019-11-13 10:05:43</small> 
+                        </p>
+                         
+                         
                          </Card.Text>
-                                         
+                         </div>  
                     </Card.Body>
                 </Card>
                 
