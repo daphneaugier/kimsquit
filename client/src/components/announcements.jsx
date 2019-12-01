@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card} from 'react-bootstrap';
 import axios from 'axios';
+import globalVal from "./globalVal";
 
 export default class announcements extends React.Component{
     state = {
@@ -8,12 +9,23 @@ export default class announcements extends React.Component{
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/v1/announcement/ENGL10`)
+        
+        const announcementsData = () => axios.get(`http://localhost:8080/api/v1/announcement/${globalVal.courseId}`)
           .then(res => {
              
             this.setState({ announcement: res.data });
             console.log(this.state.announcement);
           })
+        announcementsData();
+
+        if(!typeof globalVal.courseId === 'undefined')
+        {
+
+        }
+        else
+        {
+            setTimeout(announcementsData,250);
+        }
     }
 
     render(){
@@ -27,25 +39,18 @@ export default class announcements extends React.Component{
                         <Card.Title style={{ color: '#2699FB', fontSize: 23}}>Recent Announcements</Card.Title>
                          <Card.Text>
                          <hr />
-                        
-                            <p> <big>{announcement.announcement}</big> <br/>
-                                <small>{announcement.date}</small> 
-                            </p>
-                        
-                        <hr />
-                        <p> <big>Quiz material for next week</big> <br/>
-                                <small>2019-11-20 12:30:31</small> 
-                            </p>
-                            <hr />
-
-                        <p> <big>Tutorial starts next week</big> <br/>
-                                <small>2019-11-13 10:05:43</small> 
-                        </p>
-                        <hr />
+                        {announcement && announcement.map(announcement => (
+                            <>
+                             <p> <big>{announcement.announcement}</big> <br/>
+                                 <small>{announcement.date}</small> 
+                             </p>
                          
-                        <p> <big>Individual assignment due next week</big> <br/>
-                                <small>2019-11-06 9:35:23</small> 
-                        </p>
+                              <hr />
+                            </>
+                        ))}
+                        
+                        
+                        
                         
                          
                          
