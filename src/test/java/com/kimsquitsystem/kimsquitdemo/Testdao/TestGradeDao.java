@@ -24,18 +24,21 @@ public class TestGradeDao {
         Assertions.assertEquals(grades.size(),0);
         grades  = gradeDao.selectAllGrades();
         Assertions.assertNotEquals(grades.size(),0);
-
     }
 
     @Test
-    public void getSpecificGrade(){
-        List<Grade> grade = null;
-
-        Assertions.assertNull(grade);
-
-        grade = gradeDao.selectGradesByStudentId(1);
-
-        Assertions.assertNotNull(grade);
+    public void getSpecificGradeByStudentId(){
+        List<Grade> grade1 = null;
+        Assertions.assertNull(grade1);
+        grade1 = gradeDao.selectGradesByStudentId(1);
+        Assertions.assertNotNull(grade1);
     }
 
+    @Test
+    public void getSpecificGradeByStudentAndCourseId(){
+        Optional<Grade> grade2 = null;
+        Assertions.assertNull(grade2);
+        grade2 = gradeDao.selectGradeByStudentAndCourseId(11, "ENGL10");
+        Assertions.assertNotNull(grade2);
+    }
 }
