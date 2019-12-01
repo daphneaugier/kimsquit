@@ -2,6 +2,7 @@ package com.kimsquitsystem.kimsquitdemo.service;
 
 import com.kimsquitsystem.kimsquitdemo.dao.CourseDao;
 import com.kimsquitsystem.kimsquitdemo.model.Course;
+import com.kimsquitsystem.kimsquitdemo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,9 @@ public class CourseService {
 
     public Optional<Course> getCourseById(String id) {
         return courseDao.selectCourseById(id);
+    }
+
+    public List<Student> getStudentsInCourse(String courseId) {
+        return courseDao.selectStudentsInCourse(courseId);
     }
 }

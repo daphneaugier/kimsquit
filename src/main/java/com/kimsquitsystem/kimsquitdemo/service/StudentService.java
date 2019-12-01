@@ -1,6 +1,7 @@
 package com.kimsquitsystem.kimsquitdemo.service;
 
 import com.kimsquitsystem.kimsquitdemo.dao.StudentDao;
+import com.kimsquitsystem.kimsquitdemo.model.Course;
 import com.kimsquitsystem.kimsquitdemo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,10 +20,14 @@ public class StudentService {
     }
 
     public List<Student> getAllStudents() {
-        return studentDao.selectAllStudentss();
+        return studentDao.selectAllStudents();
     }
 
     public Optional<Student> getStudentById(String id) {
         return studentDao.selectStudentById(id);
+    }
+
+    public List<Course> getCoursesByStudentId(int studentId) {
+        return studentDao.selectCoursesByStudentId(studentId);
     }
 }

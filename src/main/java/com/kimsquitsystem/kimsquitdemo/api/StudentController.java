@@ -1,9 +1,9 @@
 package com.kimsquitsystem.kimsquitdemo.api;
 
+import com.kimsquitsystem.kimsquitdemo.model.Course;
 import com.kimsquitsystem.kimsquitdemo.service.StudentService;
 import com.kimsquitsystem.kimsquitdemo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/v1/student")
 @RestController
 public class StudentController {
@@ -23,14 +22,19 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<Student> StudentController() {
+    public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
-    @GetMapping(path="{id}")
+    @GetMapping(path = "{id}")
     public Student getStudentById(@PathVariable("id") String id) {
         return studentService.getStudentById(id)
                 .orElse(null);
+    }
+
+    @GetMapping(path = "{id}/course")
+    public List<Course> getCoursesByStudentId(@PathVariable("id") int studentId) {
+        return studentService.getCoursesByStudentId(studentId);
     }
 }
 

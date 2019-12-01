@@ -1,15 +1,15 @@
 package com.kimsquitsystem.kimsquitdemo.model;
 
 public class Announcement {
-    final private String announcementId;
-    final private String courseId;
-    final private String date;
-    final private String announcementText;
+    private final String announcementId;
+    private final String courseId;
+    private final String date;
+    private final String announcement;
 
-    public Announcement(String announcementId, String courseId,String date ,String annoucementText) {
+    public Announcement(String announcementId, String courseId, String date, String announcement) {
         this.announcementId = announcementId;
         this.courseId = courseId;
-        this.announcementText = annoucementText;
+        this.announcement = announcement;
         this.date = date;
     }
 
@@ -21,8 +21,8 @@ public class Announcement {
         return courseId;
     }
 
-    public String getAnnoucementText() {
-        return announcementText;
+    public String getAnnouncement() {
+        return announcement;
     }
 
     public String getDate() {
@@ -32,10 +32,10 @@ public class Announcement {
     @Override
     public String toString() {
         return "Announcement{" +
-                "annoucementText='" + announcementText + '\'' +
-                date +
+                "announcementId='" + announcementId + '\'' +
+                ", courseId='" + courseId + '\'' +
+                ", date='" + date + '\'' +
+                ", announcement='" + announcement + '\'' +
                 '}';
     }
-
-
 }

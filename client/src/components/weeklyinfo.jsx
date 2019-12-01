@@ -1,27 +1,53 @@
 import React from 'react';
 import {Card} from 'react-bootstrap';
-import { MdNotificationsNone, MdMailOutline } from "react-icons/md";
-import { FaRegUser } from "react-icons/fa";
+import { GoCommentDiscussion } from "react-icons/go";
+import { FaRegListAlt, FaRegFileAlt} from "react-icons/fa";
+import axios from 'axios';
+import globalVal from './globalVal';
 
 export default class weeklyinfo extends React.Component{
+    state = {
+        course: []
+    }
+
+    componentDidMount() {
+        axios.get(`http://localhost:8080/api/v1/student/${globalVal.studentId}/course`)
+          .then(res => {
+            let randomCourse = Math.floor(Math.random() * res.data.length);
+            globalVal.courseId = res.data[randomCourse].courseId;
+            this.setState({ course: res.data[randomCourse] });
+          })
+    }
     render(){
-        
+        const {course} = this.state;
         return(
             <div className="weeklyinfo-component">
                 
-                <Card style={{ backgroundColor: '#7FC4FD', height: '80.1vh'}}> 
+                <Card style={{ backgroundColor: '#7FC4FD', height: '84vh'}}> 
                     <Card.Body>
-                       <Card.Title style={{ color: 'black', fontSize: 40}}>Name of course with section</Card.Title>
-                            <Card.Text style={{ color: 'black', fontSize: 25}}>
-                                Naruto Uzumaki :D 
-                                <br/>          
-                                POD: Tuesdays 17:45-20:30 
-                                <br/> 
-                                Office: EV2.422
-                                <br/> 
-                                
+                       <div align="left" >
+                       <Card.Title align="left" style={{ color: 'black', fontSize: 29}}>{course.courseId + ': ' + course.courseDescription }</Card.Title>
+                       <hr />
+                            <Card.Text style={{ color: 'black', fontSize: 25 }}>
+                            
+                            <p ><FaRegListAlt /> &nbsp; Announcement </p>
+                            
+                            <p ><FaRegFileAlt /> &nbsp; Course outline </p>   
+                            <p ><GoCommentDiscussion /> &nbsp; Discussion and questions </p>
+                            <hr />
+                              <p>1 September - 7 September </p> 
+                            <hr />
+                              <p>8 September - 14 September</p>
+                            <hr />
+                              <p>15 September - 21 September</p>
+                              <hr />
+                              <p>22 September - 28 September</p>
+                              <hr />
+                              <p>29 September - 5 October</p>
+                              <hr />
                              </Card.Text>
-                                                
+                         
+                        </div>           
                     </Card.Body>
                 </Card>
           

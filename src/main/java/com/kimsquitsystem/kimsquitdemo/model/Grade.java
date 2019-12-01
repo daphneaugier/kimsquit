@@ -2,53 +2,25 @@ package com.kimsquitsystem.kimsquitdemo.model;
 
 
 public class Grade {
-    final private String gradeId;
-    final private String studentId;
-    final private float numberGrade;
+    private final String courseId;
+    private final int studentId;
+    private final int Grade;
 
-    /**
-     * Grade Constructor
-     * @param courseId
-     * @param studentId
-     * @param numberGrade
-     */
-    public Grade(String courseId, String studentId, float numberGrade) {
-        this.gradeId = courseId;
+    public Grade(String courseId, int studentId, int numberGrade) {
+        this.courseId = courseId;
         this.studentId = studentId;
-        this.numberGrade = numberGrade;
+        this.Grade = numberGrade;
     }
 
-    /**
-     * get grade id
-     * @return
-     */
-    public String getGradeId() {
-        return gradeId;
+    public String getCourseId() {
+        return courseId;
     }
 
-
-    /**
-     * get student Id
-     * @return
-     */
-    public String getStudentId() {
+    public int getStudentId() {
         return studentId;
     }
 
-    /**
-     * get grade
-     * @return
-     */
-    public float getNumberGrade() {
-        return numberGrade;
-    }
-
-    @Override
-    public String toString() {
-        return "Grade{" +
-                "gradeId='" + gradeId + '\'' +
-                ", studentId='" + studentId + '\'' +
-                ", numberGrade=" + numberGrade +
-                '}';
+    public int getGrade() {
+        return Grade;
     }
 }
