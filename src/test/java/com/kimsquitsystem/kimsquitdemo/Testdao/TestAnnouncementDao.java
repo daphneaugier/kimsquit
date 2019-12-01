@@ -29,7 +29,7 @@ public class TestAnnouncementDao {
 
     @Test
     public void getSpecificAnnouncement(){
-        Optional<Announcement> announcement = null;
+        List<Announcement> announcement = null;
 
         Assertions.assertNull(announcement);
 
