@@ -27,7 +27,7 @@ export default function SidebarMenu() {
   useEffect(() => {
     const fetchData = async () => {
       const studentCourses = await axios(
-        `http://localhost:8080/api/v1/student/${globalVal.studentId}/course`,
+        `http://localhost:8080/api/v1/student/${globalVal.studentId}/course`
       );
       
       const Attendees = await axios(
