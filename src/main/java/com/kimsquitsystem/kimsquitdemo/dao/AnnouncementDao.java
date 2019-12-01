@@ -29,15 +29,15 @@ public class AnnouncementDao {
         return announcements;
     }
 
-    public Optional<Announcement> selectAnnouncementByCourseId(String CourseId) {
-        final String sql = "SELECT course_id, announcement_id,  date, announcement FROM announcement WHERE course_id = ?";
-        Announcement announcement = jdbcTemplate.queryForObject(sql, new Object[]{CourseId}, (resultSet, i) -> {
+    public List<Announcement> selectAnnouncementByCourseId(String CourseId) {
+        final String sql = "SELECT course_id, announcement_id,  date, announcement FROM announcement a WHERE course_id = ? ORDER BY a.date DESC";
+        List<Announcement> announcements = jdbcTemplate.query(sql, new Object[]{CourseId}, (resultSet, i) -> {
             String announcement_id = resultSet.getString("announcement_id");
             String course_id = resultSet.getString("course_id");
             String date = resultSet.getString("date");
             String announcement_text = resultSet.getString("announcement");
             return new Announcement(announcement_id, course_id, date, announcement_text);
         });
-        return Optional.ofNullable(announcement);
+        return announcements;
     }
 }
