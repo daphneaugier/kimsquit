@@ -22,7 +22,7 @@ public class AnnouncementService {
         return announcementDao.selectAllAnnouncements();
     }
 
-    public Optional<Announcement> getAnnouncementsByCourseId(String courseId) {
+    public List<Announcement> getAnnouncementsByCourseId(String courseId) {
         return announcementDao.selectAnnouncementByCourseId(courseId);
     }
 }
