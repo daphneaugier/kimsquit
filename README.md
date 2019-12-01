@@ -22,3 +22,4 @@ The goal of this project is to develop a teacher-to-student messaging app.
 * IntelliJ IDEA
 * Java 13
 * SpringBoot
+* JUnit
