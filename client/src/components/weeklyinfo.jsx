@@ -3,6 +3,7 @@ import {Card} from 'react-bootstrap';
 import { GoCommentDiscussion } from "react-icons/go";
 import { FaRegListAlt, FaRegFileAlt} from "react-icons/fa";
 import axios from 'axios';
+import globalVal from './globalVal';
 
 export default class weeklyinfo extends React.Component{
     state = {
@@ -10,11 +11,11 @@ export default class weeklyinfo extends React.Component{
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/v1/course/ENGL10`)
+        axios.get(`http://localhost:8080/api/v1/student/${globalVal.studentId}/course`)
           .then(res => {
-             
-            this.setState({ course: res.data });
-           
+            let randomCourse = Math.floor(Math.random() * res.data.length);
+            globalVal.courseId = res.data[randomCourse].courseId;
+            this.setState({ course: res.data[randomCourse] });
           })
     }
     render(){

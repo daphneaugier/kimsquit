@@ -25,18 +25,16 @@ public class TestTeacherDao {
         Assertions.assertEquals(teachers.size(),0);
         teachers  = teacherDao.selectAllTeachers();
         Assertions.assertNotEquals(teachers.size(),0);
-
     }
 
     @Test
     public void getSpecificTeacher(){
-        Optional<Teacher> teach = null;
-
-        Assertions.assertNull(teach);
-
-        teach = teacherDao.selectByTeacherId("1");
-
-        Assertions.assertNotNull(teach);
+        Optional<Teacher> teacher = null;
+        Assertions.assertNull(teacher);
+        //Queries first id of Teacher table
+        teacher = teacherDao.selectByTeacherId("1");
+        //Checks if the object exists
+        Assertions.assertNotNull(teacher);
     }
 
 }

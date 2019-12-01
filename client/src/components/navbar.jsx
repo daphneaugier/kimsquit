@@ -3,14 +3,16 @@ import { Navbar, Nav} from 'react-bootstrap';
 import { MdNotificationsNone, MdMailOutline } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import axios from 'axios';
+import globalVal from './globalVal';
 
 export default class navbar extends React.Component{
     state = {
         student: []
     }
+    
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/v1/student/1`)
+        axios.get(`http://localhost:8080/api/v1/student/${globalVal.studentId}`)
           .then(res => {
              
             this.setState({ student: res.data });
@@ -41,6 +43,8 @@ export default class navbar extends React.Component{
         );
     }
 }
+
+
 
 
 

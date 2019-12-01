@@ -6,6 +6,7 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import TreeItem from "@material-ui/lab/TreeItem";
 import {Card} from 'react-bootstrap';
 import axios from 'axios';
+import globalVal from "./globalVal";
 
 const useStyles = makeStyles({
   root: {
@@ -21,23 +22,29 @@ export default function SidebarMenu() {
 
   const [data, setData] = useState({ courses: [], attendees: [], oneStudentData: []});
 
+
+
   useEffect(() => {
     const fetchData = async () => {
       const studentCourses = await axios(
-        `http://localhost:8080/api/v1/grade/11`,
+        `http://localhost:8080/api/v1/student/${globalVal.studentId}/course`
       );
-
+      
       const Attendees = await axios(
-        `http://localhost:8080/api/v1/course/ENGL10/students`
+        `http://localhost:8080/api/v1/course/${globalVal.courseId}/students`
       );
 
       const gradeForOneStudent = await axios (
-        ` http://localhost:8080/api/v1/grade`
+        ` http://localhost:8080/api/v1/grade/${globalVal.studentId}`
       );
 
       setData({ courses: [...studentCourses.data], attendees: [...Attendees.data], oneStudentData: [...gradeForOneStudent.data]});
     };
-    fetchData();
+
+    if(!typeof globalVal.courseId === 'undefined'){}
+    else{
+      setTimeout(fetchData,250);
+    }
     
   }, []);
 
