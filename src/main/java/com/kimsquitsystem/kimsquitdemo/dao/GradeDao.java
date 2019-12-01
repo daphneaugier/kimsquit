@@ -1,11 +1,13 @@
 package com.kimsquitsystem.kimsquitdemo.dao;
 
 import com.kimsquitsystem.kimsquitdemo.model.Grade;
+import com.kimsquitsystem.kimsquitdemo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository("grade")
 public class GradeDao {
@@ -37,5 +39,17 @@ public class GradeDao {
             return new Grade(course_id, student_id, grade);
         });
         return grades;
+    }
+
+    public Optional<Grade> selectGradeByStudentAndCourseId(int studentId, String courseId) {
+        final String sql = "SELECT course_id, student_id, grade FROM grade WHERE student_id = ? AND course_id = ?";
+        Grade grade = jdbcTemplate.queryForObject(sql, new Object[]{studentId, courseId}, (resultSet, i) ->
+        {
+            String courseIdDb = resultSet.getString("course_id");
+            int studentIdDb = resultSet.getInt("student_id");
+            int gradeDb = resultSet.getInt("grade");
+            return new Grade(courseIdDb,studentIdDb,gradeDb);
+        });
+        return Optional.ofNullable(grade);
     }
 }
